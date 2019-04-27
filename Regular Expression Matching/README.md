@@ -1,4 +1,4 @@
-# Regular Expression Matching (hard)
+# Regular Expression Matching (leetcode-hard)
 ## 递归方法：
 对*的情况分成两种讨论：string s:text，string p:pattern
 - *的作用为0次幂的情况
