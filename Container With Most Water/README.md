@@ -13,3 +13,5 @@
 
 情况1与情况2加起来**是一个全集，包含了所有的可能性**。本解法的移动方式拒绝第一部分的情况，即面积不一定会变小。而因为是一个全集，所以最终的最大值的答案一定在情况二中。
 
+
+![picture](https://github.com/lzn27/codePuzzle/blob/master/Container%20With%20Most%20Water/picture.jpg?raw=true)
