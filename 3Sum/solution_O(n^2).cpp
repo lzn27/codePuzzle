@@ -29,7 +29,7 @@ public:
 			}
 			//update i
 			i++;
-			while (i < nums.size() && nums[i] == nums[i - 1])
+			while (i < nums.size() && nums[i] == nums[i - 1] && nums[i] <= 0)
 				i++;
 		}
 		return res;
