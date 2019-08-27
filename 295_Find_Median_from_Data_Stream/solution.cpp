@@ -5,6 +5,38 @@
 #include<algorithm>
 using namespace std;
 
+class MedianFinderbetter {
+private:
+    multiset<int> median;
+    set<int>::iterator mid;
+public:
+    /** initialize your data structure here. */
+    MedianFinderbetter() {
+
+    }
+
+    void addNum(int num) {
+        median.insert(num);
+        if (median.size() == 1) {
+            mid = median.begin();
+        }
+        else if (median.size() % 2 == 1 && num >= *mid) {
+            mid++;
+        }
+        else if (median.size() % 2 == 0 && num < *mid) {
+            mid--;
+        }
+    }
+
+    double findMedian() {
+        if (median.size()) {
+            return  median.size() % 2 == 0 ? (*mid + *next(mid,1)) / 2.0 : *mid;
+        }
+        else
+            return 0.0;
+    }
+};
+
 class MedianFinder1 {
 private:
     multiset<int> median;
