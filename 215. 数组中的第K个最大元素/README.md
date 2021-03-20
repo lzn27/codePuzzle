@@ -1,7 +1,7 @@
 # 215. 数组中的第K个最大元素
 
 在未排序的数组中找到第 k 个最大的元素。请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
-
+Partition时间复杂度O(n)
 ```c++
 class Solution {
 public:
@@ -34,4 +34,20 @@ public:
 };
 ```
 
+```C#
+    int Partition(int[] nums, int l, int r)
+    {
+        int key = nums[l];
+        while (l < r)
+        {
+            while (l < r && nums[r] < key) r--;
+            nums[l] = nums[r];
+            while (l < r && nums[l] > key) l++;
+            nums[r] = nums[l];
+        }
+        nums[l] = key;
+        return l;
+    }
+```
+ 
 

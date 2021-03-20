@@ -2,7 +2,7 @@ public class Solution
 {
     public void QuickSort(int[] nums)
     {
-        qs(nums, 0, nums.Length - 1);
+        Qs(nums, 0, nums.Length - 1);
     }
     private void Qs(int[] nums, int l, int r)
     {
@@ -15,13 +15,13 @@ public class Solution
 
     private int Partition(int[] nums, int l, int r){
         int key = nums[l];
-        while(l<r){
-            while(l<r&&nums[r]>=key)r--;
-            nums[l]=nums[r];
-            while(l<r&&nums[l]<=key)l++;
-            nums[r]=nums[l];
+        while(l < r){
+            while(l < r && nums[r] >= key) r--;
+            nums[l] = nums[r];
+            while(l<r && nums[l] <= key) l++;
+            nums[r] = nums[l];
         }
-        nums[l]=key;
+        nums[l] = key;
         return l;
     }
 }
