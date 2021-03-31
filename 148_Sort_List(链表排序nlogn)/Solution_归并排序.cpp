@@ -75,3 +75,37 @@ int main() {
 
     return 0;
 }
+
+        for (int subLength = 1; subLength < length; subLength <<= 1) {
+            ListNode* prev = dummyHead, *curr = dummyHead->next;
+            while (curr != nullptr) {
+                ListNode* head1 = curr;
+                for (int i = 1; i < subLength && curr->next != nullptr; i++) {
+                    curr = curr->next;
+                }
+                ListNode* head2 = curr->next;
+                curr->next = nullptr;
+                curr = head2;
+                for (int i = 1; i < subLength && curr != nullptr && curr->next != nullptr; i++) {
+                    curr = curr->next;
+                }
+                ListNode* next = nullptr;
+                if (curr != nullptr) {
+                    next = curr->next;
+                    curr->next = nullptr;
+                }
+                ListNode* merged = merge(head1, head2);
+                prev->next = merged;
+                while (prev->next != nullptr) {
+                    prev = prev->next;
+                }
+                curr = next;
+            }
+        }
+        return dummyHead->next;
+    }
+
+作者：LeetCode-Solution
+链接：https://leetcode-cn.com/problems/sort-list/solution/pai-xu-lian-biao-by-leetcode-solution/
+来源：力扣（LeetCode）
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
